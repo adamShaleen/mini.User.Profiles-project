@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='userProfiles' lang="en">
+<head>
+
+    <!--DEFAULTS AND LINKS TO STYLE FILES-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--This project has no CSS-->
+    <!-- <link rel="stylesheet" href="" media="screen" title="no title" charset="utf-8"> -->
+
+    <!--PAGE TITLE-->
+    <title>User Profiles</title>
+
+</head>
+
+<!--linking the controller to the main body of html-->
+<body ng-controller='MainController'>
+    <!--looping through the objects-->
+    <div ng-repeat='user in users'>
+        <!--Binding the array data from the service to the view-->
+        <img style='border: 1px solid black' src='{{user.avatar}}'</img>
+        <p> I.D. {{user.id}}</p>
+        <p> First Name: {{user.first_name}}</p>
+        <p>Last Name: {{user.last_name}}</p>
+        <p>Quote: {{user.quote}}</p>
+    </div>
+
+
+<!--LINK TO ANGULAR LIBRARY-->
+<script src='http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular.min.js'></script>
+<!--LINK TO JAVASCRIPT FILES-->
+<script src='app.js'></script>
+<script src='controller.js'></script>
+<script src='service.js'></script>
+<!--CLOSING BODY TAG-->
+</body>
+</html>
